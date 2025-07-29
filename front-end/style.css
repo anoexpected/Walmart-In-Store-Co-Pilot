@@ -1,0 +1,652 @@
+:root {
+  --walmart-blue: #0071ce;
+  --walmart-dark-blue: #004c91;
+  --walmart-yellow: #ffc220;
+  --walmart-light-blue: #e6f3ff;
+  --walmart-gradient: linear-gradient(135deg, #0071ce 0%, #004c91 100%);
+  --shadow-soft: 0 2px 8px rgba(0, 113, 206, 0.1);
+  --shadow-medium: 0 4px 12px rgba(0, 113, 206, 0.15);
+  --transition-smooth: all 0.2s ease;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f8fafc;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+/* App Container */
+.app-container {
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Header */
+.walmart-gradient {
+  background: var(--walmart-gradient);
+  position: relative;
+}
+
+.header-decoration {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.header-decoration-1 {
+  width: 80px;
+  height: 80px;
+  top: -20px;
+  right: -20px;
+}
+
+.header-decoration-2 {
+  width: 60px;
+  height: 60px;
+  bottom: -15px;
+  left: -15px;
+}
+
+.header-decoration-3 {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  right: 30%;
+}
+
+.header-decoration-4 {
+  width: 30px;
+  height: 30px;
+  top: 30%;
+  left: 20%;
+  background: rgba(255, 194, 32, 0.2);
+}
+
+/* Remove complex animations */
+.decoration-inner {
+  display: none;
+}
+
+/* Status Indicator */
+.status-indicator {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  z-index: 20;
+}
+
+.status-indicator.online {
+  background-color: #22c55e;
+}
+
+.status-pulse {
+  display: none;
+}
+
+/* Content Area */
+.content-area::before {
+  display: none;
+}
+
+/* Four Grid Cards - Simplified */
+.four-grid-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 120px;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+}
+
+.four-grid-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--walmart-yellow);
+}
+
+.four-grid-card .icon-container {
+  width: 48px;
+  height: 48px;
+  background: var(--walmart-gradient);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  transition: var(--transition-smooth);
+}
+
+.four-grid-card:hover .icon-container {
+  transform: scale(1.05);
+}
+
+.four-grid-card .icon-container svg {
+  color: white;
+  width: 24px;
+  height: 24px;
+}
+
+.four-grid-card .title {
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Remove all glow and shine effects */
+.icon-glow,
+.card-shine {
+  display: none;
+}
+
+/* Store Map Card - Simplified */
+.store-map-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-smooth);
+}
+
+.store-map-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.card-glow {
+  display: none;
+}
+
+.store-map-preview {
+  width: 100%;
+  height: 80px;
+  background: #e3f2fd;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+  padding: 16px;
+}
+
+.store-map-preview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60"><rect width="35" height="15" x="15" y="12" fill="%234FC3F7" rx="2"/><rect width="35" height="15" x="60" y="12" fill="%234FC3F7" rx="2"/><rect width="35" height="15" x="105" y="12" fill="%234FC3F7" rx="2"/><rect width="35" height="15" x="150" y="12" fill="%234FC3F7" rx="2"/><rect width="35" height="15" x="15" y="33" fill="%234FC3F7" rx="2"/><rect width="35" height="15" x="60" y="33" fill="%234FC3F7" rx="2"/><rect width="35" height="15" x="105" y="33" fill="%234FC3F7" rx="2"/><rect width="35" height="15" x="150" y="33" fill="%234FC3F7" rx="2"/></svg>') no-repeat center;
+  background-size: contain;
+}
+
+.map-title {
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.map-description {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* Remove complex map overlays */
+.map-grid-overlay,
+.map-pulse-dot {
+  display: none;
+}
+
+/* Walmart Button - Simplified */
+.walmart-button {
+  background: var(--walmart-gradient);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.walmart-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Remove button effects */
+.walmart-button::before,
+.button-text,
+.button-ripple {
+  display: none;
+}
+
+/* Chat Styles - Simplified */
+.chat-header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.back-button {
+  transition: var(--transition-smooth);
+}
+
+.back-button::before {
+  display: none;
+}
+
+.chat-messages-container {
+  background: #fafbfc;
+}
+
+.chat-messages-container::before {
+  display: none;
+}
+
+.chat-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.user-chat-container {
+  flex-direction: row-reverse;
+}
+
+.profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.user-avatar {
+  background: var(--walmart-yellow);
+  color: var(--walmart-dark-blue);
+}
+
+.system-avatar {
+  background: var(--walmart-gradient);
+  color: white;
+}
+
+.system-avatar::before {
+  display: none;
+}
+
+.message-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.user-message .message-header {
+  color: rgba(255, 255, 255, 0.8);
+  justify-content: flex-end;
+}
+
+.user-message {
+  background: var(--walmart-gradient);
+  color: white;
+  border-radius: 16px 16px 4px 16px;
+  padding: 12px 16px;
+}
+
+.user-message::before {
+  display: none;
+}
+
+.system-message {
+  background: white;
+  color: #1f2937;
+  border-radius: 16px 16px 16px 4px;
+  border: 1px solid #e5e7eb;
+  padding: 12px 16px;
+}
+
+.system-message::before {
+  display: none;
+}
+
+.typing-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.typing-bubble {
+  background: #f3f4f6;
+  border-radius: 16px 16px 16px 4px;
+  padding: 12px 16px;
+}
+
+.typing-bubble::before {
+  display: none;
+}
+
+.thinking-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.thinking-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--walmart-blue);
+  animation: bounce 1.4s infinite both;
+}
+
+.thinking-dots .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.thinking-dots .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.cost-card {
+  background: var(--walmart-gradient);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 12px;
+  color: white;
+}
+
+.cost-card::before {
+  display: none;
+}
+
+.item-list {
+  background: var(--walmart-light-blue);
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid rgba(0, 113, 206, 0.2);
+}
+
+/* Chat Input - Simplified */
+.chat-input-container {
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 16px;
+}
+
+.chat-input-container::before {
+  display: none;
+}
+
+.input-field-container {
+  position: relative;
+  flex: 1;
+}
+
+.chat-input {
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: var(--transition-smooth);
+  background: white;
+  width: 100%;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--walmart-blue);
+  box-shadow: 0 0 0 3px rgba(0, 113, 206, 0.1);
+}
+
+.input-glow {
+  display: none;
+}
+
+.send-button {
+  background: var(--walmart-gradient);
+  border-radius: 18px;
+  padding: 12px;
+  transition: var(--transition-smooth);
+  border: none;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  transform: translateY(-1px);
+}
+
+.send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-bg {
+  display: none;
+}
+
+.send-icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+/* Quick Actions - Simplified */
+.quick-action {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.quick-action::before {
+  display: none;
+}
+
+.quick-action:hover {
+  transform: translateY(-1px);
+  border-color: var(--walmart-blue);
+}
+
+/* Store Map - Simplified */
+.store-map-container {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.store-map-container::before {
+  display: none;
+}
+
+.store-grid button {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.store-grid button::before {
+  display: none;
+}
+
+.store-grid button:hover {
+  transform: translateY(-1px);
+  border-color: var(--walmart-blue);
+}
+
+.aisle-highlight {
+  background: var(--walmart-gradient) !important;
+  color: white !important;
+  transform: scale(1.05) !important;
+  border-color: var(--walmart-yellow) !important;
+}
+
+.aisle-highlight::after {
+  display: none;
+}
+
+.quick-map-button {
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.quick-map-button::before {
+  display: none;
+}
+
+.quick-map-button:hover {
+  transform: translateY(-1px);
+}
+
+/* Remove all complex animations */
+@keyframes bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+  .four-grid-card {
+    padding: 16px 12px;
+    min-height: 100px;
+  }
+
+  .four-grid-card .icon-container {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+
+  .four-grid-card .icon-container svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .four-grid-card .title {
+    font-size: 13px;
+  }
+
+  .store-map-card {
+    padding: 16px;
+  }
+
+  .store-map-preview {
+    height: 60px;
+  }
+
+  .chat-input-container {
+    padding: 12px;
+  }
+
+  .profile-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .store-grid button {
+    padding: 8px 6px;
+    font-size: 11px;
+  }
+}
+
+/* Focus Styles */
+button:focus-visible {
+  outline: 2px solid var(--walmart-yellow);
+  outline-offset: 2px;
+}
+
+input:focus-visible {
+  outline: 2px solid var(--walmart-yellow);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

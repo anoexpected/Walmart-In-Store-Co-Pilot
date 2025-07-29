@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmart In-Store Co-Pilot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50">
+    <div class="w-full max-w-sm mx-auto h-screen app-container overflow-hidden relative flex flex-col">
+        <div id="status-indicator" class="status-indicator" title="Backend Status">
+            <div class="status-pulse"></div>
+        </div>
+
+        <header class="walmart-gradient text-white p-6 pb-8 relative overflow-hidden">
+            <div class="header-decoration header-decoration-1">
+                <div class="decoration-inner"></div>
+            </div>
+            <div class="header-decoration header-decoration-2">
+                <div class="decoration-inner"></div>
+            </div>
+            <div class="header-decoration header-decoration-3">
+                <div class="decoration-inner"></div>
+            </div>
+            <div class="header-decoration header-decoration-4"></div>
+
+            <div class="relative z-10">
+                <div class="text-2xl font-bold leading-tight mb-6 header-title">
+                    <span class="title-line-1">Speed up</span><br>
+                    <span class="title-line-2">your store run</span>
+                </div>
+                <div class="user-welcome">
+                    <p class="text-blue-100 text-base font-medium greeting-text">Hi, Anotida</p>
+                    <h2 class="text-xl font-bold mt-1 welcome-text">Welcome to your store</h2>
+                    <div class="flex items-center mt-2 text-blue-100 location-info">
+                        <div class="location-icon">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium store-name">Carrollton Supercenter</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 bg-gray-50 -mt-4 rounded-t-3xl relative overflow-hidden flex flex-col content-area">
+            <section id="welcome-section" class="p-6 pt-8 fade-in">
+                <div class="grid grid-cols-2 gap-4 mb-6 action-grid">
+                    <button id="find-item-button" class="four-grid-card" aria-label="Find items in store">
+                        <div class="icon-container">
+                            <div class="icon-glow"></div>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="title">Find item(s)</div>
+                        <div class="card-shine"></div>
+                    </button>
+
+                    <button id="check-price-button" class="four-grid-card" aria-label="Check item prices">
+                        <div class="icon-container">
+                            <div class="icon-glow"></div>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="title">Check a price</div>
+                        <div class="card-shine"></div>
+                    </button>
+
+                    <button class="four-grid-card" aria-label="Use Walmart Pay">
+                        <div class="icon-container">
+                            <div class="icon-glow"></div>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="title">Walmart Pay</div>
+                        <div class="card-shine"></div>
+                    </button>
+
+                    <button class="four-grid-card" aria-label="Scan and Go shopping">
+                        <div class="icon-container">
+                            <div class="icon-glow"></div>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v1m6 11h2m-6-12h3a2 2 0 012 2v10a2 2 0 01-2 2H9a2 2 0 01-2-2V6a2 2 0 012-2h3zm-5 12l1.5 1.5L15 12">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="title">Scan & Go</div>
+                        <div class="card-shine"></div>
+                    </button>
+                </div>
+
+                <div class="store-map-card">
+                    <div class="card-glow"></div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 map-title">Store map</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed map-description">
+                                Quickly find everything you need in the store
+                            </p>
+                        </div>
+                    </div>
+                    <div class="store-map-preview mb-4">
+                        <div class="map-grid-overlay"></div>
+                        <div class="map-pulse-dot"></div>
+                    </div>
+                    <button id="view-map-button" class="walmart-button w-full" aria-label="View store map">
+                        View map
+                    </button>
+                </div>
+            </section>
+
+            <div id="interaction-container" class="flex-1 flex-col min-h-0 hidden">
+                <div id="chat-header"
+                    class="p-3 flex items-center border-b border-gray-200 bg-white hidden chat-header">
+                    <button id="back-to-home-button"
+                        class="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center rounded-lg p-2 -ml-2 back-button"
+                        aria-label="Back to home">
+                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                        Home
+                    </button>
+                </div>
+
+                <div id="chat-messages" class="flex-grow overflow-y-auto p-6 pt-8 space-y-4 chat-messages-container"
+                    role="log" aria-live="polite" aria-label="Chat messages"></div>
+
+                <div id="store-map" class="flex-grow p-6 pt-8 hidden store-map-section">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-gray-900 map-section-title">Store Layout</h3>
+                        <button id="back-to-chat"
+                            class="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center back-to-chat-button"
+                            aria-label="Back to chat">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                            Back to Chat
+                        </button>
+                    </div>
+                    <div class="store-map-container">
+                        <div class="grid grid-cols-4 gap-3 text-xs store-grid" role="grid"
+                            aria-label="Store aisle layout"></div>
+                    </div>
+                </div>
+
+                <div id="chat-input-area" class="chat-input-container">
+                    <div class="flex items-center space-x-3 input-wrapper">
+                        <div class="input-field-container">
+                            <input id="chat-input" type="text" class="chat-input flex-grow"
+                                placeholder="Ask about items, locations, or your shopping list..."
+                                aria-label="Chat input">
+                            <div class="input-glow"></div>
+                        </div>
+                        <button id="send-button" class="send-button text-white hover:bg-blue-700 disabled:opacity-50"
+                            aria-label="Send message">
+                            <div class="button-bg"></div>
+                            <svg class="w-5 h-5 send-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
