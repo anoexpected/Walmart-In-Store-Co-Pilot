@@ -16,7 +16,14 @@ This is my project submission for the Walmart Global Tech Sparkathon Hackathon �
 
 Watch a walkthrough of the Walmart In-Store Co-Pilot in action:
 
-[![Walmart In-Store Co-Pilot Demo](https://img.youtube.com/vi/kC1vfyucOKQ/0.jpg)](https://youtu.be/kC1vfyucOKQ)
+## 🚀 Demo
+
+Watch a walkthrough of the Walmart In-Store Co-Pilot in action:
+
+<a href="https://youtu.be/kC1vfyucOKQ" target="_blank">
+  <img src="https://img.youtube.com/vi/kC1vfyucOKQ/maxresdefault.jpg" alt="Walmart Co-Pilot Demo" style="width:100%; max-width:800px; display:block; margin:auto;" />
+</a>
+
 
 ## 🛠️ Technologies Used
 
